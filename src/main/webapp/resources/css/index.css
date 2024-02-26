@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* html, body{
+	height: 100%;
+}
+#highMain{
+	% : relative -> need high rank attribute
+	height: 98%;
+}
+ */
+html, body{
+	padding: 0px; margin : 0px; top: 0px;
+	position: relative;
+}
+#topOfTop{
+	height: 3px;
+	line-height: 3px;
+	position: relative;
+	
+}
+	
+	
+
+/*mobile*/
+@media all and (max-width: 600px){
+	#topOfTop{
+		display: none;
+	}
+	#bookbtn{
+		display: none;
+	}
+	
+	/*------------------------size------------------------*/
+	body, html{
+		background-image: url("../images/background/mint-ocean.png");
+		background-size: cover;
+	}
+	
+	#highMain{
+	 			/* ↓ Slide Show (JQuery) *//* header에서 div 크기 결정 x index에서 o */
+	 	/* background-image: url("../images/background/resort.png");
+		background-size: 600px 400px;
+		background-repeat: no-repeat;*/
+		
+		overflow: hidden;	/*scroll_bar: hidden*/
+		
+		/*div*/
+		/* width: 100%;
+		height: 500px; */
+		
+		text-align: center;
+	}
+	.mySlide{
+		width: 100%;
+		height: 300px;
+	}
+
+	
+	/*------------------------hover------------------------*/
+	#mobilebtn > button{
+		color: rgba(30, 22, 54, 0.6);
+		box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+		
+		/* 3D */
+		transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 0.1360);
+	}
+	#mobilebtn > button:hover{
+		color: rgba(255, 255, 255, 0.85);
+		box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+	}
+	
+	
+	/*------------------------position------------------------*/
+	#mobilebtn{
+		position: relative;
+	}
+	
+	/*------------------------other------------------------*/
+	
+}
+
+
+
+
+/*해상도 600 ~*/
+@media all and (min-width: 600px) and (max-width: 890px){
+	#mobilebtn{
+		display: none;
+	}
+	
+	
+	/*----------------------background----------------------*/
+	body, html{
+		background-image: url("../images/background/coconut_tree.png");
+		background-size: cover;
+	}
+	
+	/*------------------------size------------------------*/
+	#highMain{
+	 	/*background-image: url("../images/background/resort.png");
+		background-position: top;
+		background-repeat: no-repeat;
+*/		
+		width: 100%;
+		height: 500px;
+		
+		text-align: center;
+	}
+	.mySlide{
+		width: 100%;
+	}
+}
+
+
+
+
+/*해상도 890 ~*/
+@media all and (min-width: 890px){
+	#mobilebtn{
+		display: none;
+	}
+	/*------------------------position------------------------*/
+	
+	
+	/*------------------------color--------------------------*/
+	#bookbtn{
+		background-color: rgba(153,188,195,0.5);
+	}
+	
+	body, html{
+		background-image: url("../images/background/coconut_tree.png");
+		background-size: 100% 1700px;
+		background-repeat: no-repeat;
+		max-width: 1800px;				/* limit */
+	}
+		
+	/*------------------------size------------------------*/
+	#highMain{
+		width: 100%;
+		height: 500px;
+		padding: 0px; margin: 0px;
+		
+		text-align: center;	/*들어있는 아이템 가운데정렬*/
+	}
+	.mySlide{
+		display: table; margin-left: auto; margin-right: auto;
+	}
+	.mySlide{
+		/*filter: drop-shadow(16px 16px 20px #e8f6eb);	/*신강림효과 -> 빛*/
+	}
+	
+	
+}

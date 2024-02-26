@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*---------------- DROP DOWN MENU ----------------*/
+
+.resortTitle .resortTitleul .menu{
+	background-color: rgb(54, 19, 89);
+	border: 1px solid #fff;
+	width: 100px;
+	height: 40px;
+	line-height:40px;	/*height와 같은 값 : 중앙 정렬 (middle)*/
+	text-align:center;
+	float:left;	/*박스를 가로정렬*/
+	
+	position:relative;
+}
+
+
+.resortTitle .resortTitleul .menu .menua{
+	text-decoration: none;	/*a태그 밑줄 제거*/
+	color: white;
+	display: block;		/*한통으로 묶음  //inline은 개별*/
+	
+}
+
+.resortTitle .resortTitleul .menu .menua:hover{
+	background-color: black;	/*a태그에 커서대면 모든 색상 변경*/
+	color:yellow;
+}
+
+.resortTitle .resortTitleul .subul{
+	display: none;	/* 평소엔 하위 메뉴(li) 안 보이게 */
+	
+	position:absolute;
+}
+
+.resortTitle .resortTitleul .menu:hover > .subul{
+	display: block;		/*li에 커서대면 보이게*/
+}
+
+
+
+
+
+/*---------------- OTHERS ----------------*/
+.subul, .menu{
+	list-style-type: none;
+}
+.subli{
+	background-color: rgb(54, 19, 89);
+	width: 100px;
+}
+
+.suba{
+	color: white;
+	text-decoration: none;
+}
+
+.subul .subli .suba:hover{
+	background-color: black;
+	color:yellow;
+	display: block;	/* 한 통으로 묶음 -> a태그만 배경색 변하지 않고 모두 전체 다 변함 */
+}
+

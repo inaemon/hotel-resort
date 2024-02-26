@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+/* title */
+.wrapper{
+	margin: 0 auto 0 60px;
+	width: 90%;
+	background-color: #549073;
+	color: $white;
+}
+
+
+
+.pagination{
+	list-style:none;  
+    float:left;  
+    display:inline;
+    loat:left; 
+}
+.paginationmv{
+}
+
+.paginationli{
+    color:#000;
+    float:left;  
+    padding:4px;  
+    margin-right:3px;  
+    width:15px;   
+    font:bold 12px tahoma;  
+    border:1px solid #eee;  
+    text-align:center;  
+    text-decoration:none;  
+}
+
+.pagination .paginationli:hover, .pagination .paginationli:focus{
+	color:#fff;  
+    border:1px solid #f40;  
+    background-color:#f40;  
+}

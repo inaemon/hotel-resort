@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/*기준  + 여백 제거*/
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0%;
+	padding: 0%;
+	
+	position: relative;
+}
+
+
+/*-----------------------size-----------------------*/
+
+#div_left{
+	width: 180px;
+	float: left;
+	padding-right: 30px;
+	
+	/*background-color: red;*/
+}
+#div_content{
+	width: 720px;
+	float: left;
+	padding-left: 10px;
+	
+	/*background-color: blue; /*잘 나누어졌나 Check a boundary line*/
+}
+	#div_list{
+		
+	}
+	#div_content2{
+		padding-left: 50px;
+	}
+/*---------------------position---------------------*/
+.title{
+	position: relative;
+	top: -100px;
+	left: 60px;
+}
+#div_left{
+	position: relative;
+	top: 50px;
+}
+#div_content{
+	position: relative;
+	top: 150px;
+}
+/*--------------------color&shape---------------------*/
+.title{
+	color: #8FBC8C;
+	font-size: 35px;
+}
+	/***< p >***/
+#div_content p, #waterzone p{
+	color: white;
+	font-size: 20px;
+	margin: 10px;
+	
+}
+	/***< li >***/
+#div_content li, #waterzone li{
+	list-style-type: none;
+	height: 35px;
+	line-height: 12.5px;
+	margin-bottom: 30px;
+	
+	float: left;
+	text-align: center;
+}
+.liststart{
+	border-radius: 7px 0px 0px 7px;
+}
+.listend{
+	border-radius: 0px 7px 7px 0px
+}
+
+#div_content2{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*-----------------------hover-----------------------*/
+#div_content p:hover, #waterzone p:hover{
+	cursor: pointer;
+}
+
+
+
+/* ★★★★★★★★★★★★★★★★★★★★★ responsive web ★★★★★★★★★★★★★★★★★★★★★ */
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  890 ~ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  */
+@media all and (min-width: 890px){
+	/***< header >***/
+	/*.center{
+		display: table; margin-left: auto; margin-right: auto; white-space: nowrap;
+	}*/
+	body,html{
+		max-width: 1600px;
+		background-size: 100% 1500px;
+		background-repeat: no-repeat;
+	}
+	.header{
+		position: relative;
+		left: 15%;
+	}
+	#div_content{
+		margin-left: 20%;
+	}
+	
+	
+}
+

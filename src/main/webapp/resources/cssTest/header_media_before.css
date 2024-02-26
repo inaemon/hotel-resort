@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+/*---------------- DROP DOWN MENU ----------------*/
+
+
+.menua{
+	text-decoration: none;	/*a태그 밑줄 제거*/
+	color: rgba(255, 255, 255, 0.5);
+	background-color: #8FBC8F;
+	
+	display: block;		/*한통으로 묶음  //inline은 개별*/
+	
+	/*3D*/		/* transition: background-color 0.3s ease; */
+	transition: all 0.3s ease;  /* all이라해도 hover에 있는 속성만 변화됨 */
+}
+
+
+
+/*
+
+이럴 필요가 없지. 무식하게 전부 다 class 줬으니까 구분할 필요가 없지.
+ .resortTitle .resortTitleul .menu .menua:hover{
+	3D
+	background-color: #2570a2;	a태그에 커서대면 모든 색상 변경
+	color:white;
+} */ 
+
+
+
+.menua:active{
+	background-color: #2570a2;
+	color:white;
+}
+
+/*3D*/
+.menu:hover, .menua:hover{
+	background-color: #2570a2;
+	color:white;
+}
+
+
+
+
+
+.subul{
+	display: none;	/* 평소엔 하위 메뉴(li) 안 보이게 */
+	
+}
+
+
+
+.menu:hover > .subul{
+	display: block;		/*li에 커서대면 보이게*/
+	
+}
+
+
+
+/*3rd*/
+
+.smallestul{
+	display: none;
+}
+/*평소엔 display: none  -> 숨겨    //hover대면 block형태로 띄워*/
+.subli:hover > .smallestul{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/*이 밖은 모든 해상도 공용*/
+/*---------------- responsive size -------------------*/
+@media all and (max-width: 768px){
+	.resourtTitleul{
+		display: none;
+	}
+}
+
+	/*768 이상, 1024이하 해상도에서 보여줄 웹 모양*/
+@media all and (min-width: 768px) and  (max-width: 1024px){
+	.resourtTitleul{
+		display: none;
+	}
+}
+
+@media all and (min-width: 1024px){
+	.resourtTitleul{
+		display: none;
+	}
+}
+
+
+	/*창크기가 1000이하되면 작은 블록으로 보이게 하기
+@media screen and (max-width: 1000px){
+
+	}*/
+
+/*---------------- location ---------------*/
+
+.resortTitleul, .resortTitleul > li{
+	position:relative;	/*상위 메뉴가 위치 잡아줌  relative: 독립적 (아무도 범접 금지)*/
+	
+}
+
+/*2nd*/
+.subul{
+	/*고정시킴 .menu위치 기준으로
+				to .menu(relative) standard*/
+	position:absolute;	/*relative위치를 기준으로 고정적*/
+	top: 100%;
+	
+}
+
+/*3rd*/
+.smallestul{
+	/*위치지정 후 고정시킴 .subul위치 기준으로
+			to .subul(absolute) standard*/
+	position:absolute;		/*absolute위치를 기준으로 고정적*/
+	top:-2px;
+	left:100%;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------- OTHERS ----------------*/
+/*==2nd==*/
+.subul, .menu{
+	list-style-type: none;
+}
+.subli{
+	background-color: #8FBC8F;
+	width: 230%;
+	
+	/*3D*/
+	transition: all 0.3s ease;
+}
+
+
+
+.suba, .smallesta{
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+.subli:hover, .suba:hover{
+	background-color: #2570a2;
+	color:white;
+	display: block;	/* 한 통으로 묶음 -> a태그만 배경색 변하지 않고 모두 전체 다 변함 */
+}
+
+
+
+
+
+
+
+
+/*===== 1st =====*/
+.resortTitle{
+	margin: 0 5%;
+}
+
+.resortTitleul > li{		/* .resortTitleul 바로아래에 있는 li전체 -> .logo + .menu에 적용*/
+	text-align:center;
+	float: left;	/*박스를 가로로 왼쪽정렬*/
+	/* display: inline-block; */
+	
+}
+
+.menu{
+	width: 10%;
+	height: 65%;
+	line-height:50px;	/*height와 같은 값 : 중앙 정렬 (middle)*/
+	
+}
+
+.logo{
+	background-color: #8FBC8C;
+	height: 50px;
+	list-style-type: none;
+	
+	line-height:50px;	/*= height = middle*/
+	
+	padding-left: 1%;
+	padding-right: 6%;
+}
+
+.logo > a{
+	text-decoration: none;	/*a태그 밑줄 제거*/
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+/*===== 3rd =====*/
+.smallestli{
+	list-style-type: none; /* li 장식 지워 */
+/* 	border: 1px solid #fff; */
+	background-color: #8FBC8C;
+	width: 400%;
+	
+}
+
+.smallestul{
+	left: 130%;
+	top: 10px;
+}
+
+.smallesta:hover{
+	background-color:#2570a2;
+	color: white;
+
+	display: block;	/* 한통으로 묶어서 적용해  -> 하나로 합체 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------- 3D ----------------*/
+/* [TRANSITION] : hover 상태변화 (모양 변화)
+
+   transition-property : 속성
+   						{none, all,  other : width(넓이만 변화), height(높이만 변화)   -> all이 제일(the best) smooth하고 natural하고 good!}
+   transition-duration : 실행시간  (essential !!!)
+   						{0.1s(second) ~ 1s가 제일 good!)
+   transition-timing-function :  속도
+   transition-delay : 언제 시작?  (지연)   (when start?)
+
+  (ALL SET)
+   transition : property   duration   timing-function   delay
+   default	  :   all         0           ease            0
+
+   ex         :  width        1s          ease,
+   				 height       0.5s        ease,
+   			background-color  0.3s        ease
+*/
+
+
+
+
+

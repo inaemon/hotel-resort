@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.boardMapper">
+	<insert id="create">
+		insert into spring_board(title, content, writer)
+		values(#{title}, #{content}, #{writer})
+	</insert>
+
+	<select id="read" resultType="com.spring.board.domain.BoardVO">
+		select *
+		from spring_board
+		where bno=#{bno}
+	</select>
+
+	<select id="listAll" resultType="com.spring.board.domain.BoardVO">
+		select *
+		from spring_board
+		where bno>0  				<!-- 게시물 내림차순 -> 최신순 -->
+		order by bno desc, regdate desc
+	</select>
+	
+	<update id="update">
+		update spring_board
+		set title=#{title}, content=#{content}
+		where bno=#{bno}
+	</update>
+	
+	<delete id="delete">
+		delete from spring_board
+		where bno=#{bno}
+	</delete>
+	
+	<!-- 페이지 나누기  (page_division) -->
+	<select id="listCriteria"
+			resultType="com.spring.board.domain.BoardVO">
+		select *
+		from spring_board
+		where bno>0
+		order by bno desc, regdate desc
+		limit #{pageStart}, #{perPageNum} <!-- select하는데 limit 제한줌 -->
+	</select>
+	
+	<!-- 전체 게시물 수 (All_DB) -->
+	<select id="countPaging" resultType="int">
+		select count(*)
+		from spring_board
+		where bno>0
+	</select>
+	
+	
+	
+	
+	<!-- 검색 Search  동적 SQL -->
+	<sql id="search">
+			<if test="searchType != null">
+			<if test="searchType=='t'.toString()">
+				and title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='c'.toString()">
+				and content like CONCAT('%', #{keyword}, '%')
+			</if>
+				<if test="searchType=='w'.toString()">
+				and writer like CONCAT('%', #{keyword}, '%')
+			</if>
+				<if test="searchType=='tc'.toString()">
+				and (title like CONCAT('%', #{keyword}, '%') ) or
+				content like CONCAT('%', #{keyword}, '%')
+			</if>
+				<if test="searchType=='cw'.toString()">
+				and ( title like CONCAT('%', #{keyword}, '%') ) or
+				writer like CONCAT('%', #{keyword}, '%')
+			</if>
+				<if test="searchType=='tcw'.toString()">
+				and title like concat('%', #{keyword}, '%') or
+				content like concat('%', #{keyword}, '%') or
+				writer like concat('%', #{keyword}, '%')
+			</if>
+		</if>
+	</sql>
+	
+	<select id="listSearch" resultType="com.spring.board.domain.BoardVO">
+		select *
+		from spring_board
+		where bno > 0
+		<include refid='search'/>
+		order by bno desc
+		limit #{pageStart}, #{perPageNum}
+	</select>	
+	
+		<!-- 전체 게시물 수 (All_DB)  - 동적 SQL -->
+	<select id="listSearchCount" resultType="int">
+		select count(*)
+		from spring_board
+		where bno>0
+		<include refid='search'/>
+	</select>
+</mapper>
