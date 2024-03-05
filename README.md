@@ -2,3 +2,5 @@
 - Spring, JSP, HTML, CSS, JavaScript
 - 개인 프로젝트
 - '예약' 부분은 구현 필요
+
+![flowchart](https://github.com/inaemon/hotel-resort/assets/125636780/d00f9e33-52f9-4f4f-a967-0f91825630a0)
