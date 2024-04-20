@@ -1,6 +1,6 @@
 # hotel-resort
 - Spring, JSP, HTML, CSS, JavaScript
-- 개인 프로젝트
+- 대우에서 진행했던 개인 파이널 웹(frontend, backend) 프로젝트
 - '예약' 부분은 구현 필요
 
 ---
